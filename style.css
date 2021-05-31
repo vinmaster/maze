@@ -1,8 +1,150 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('http://fonts.googleapis.com/css?family=Roboto');
+
+*,
+*::after,
+*::before {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+html,
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  padding: 0.6em 1.2em;
+  background: #455a64;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.preload * {
+  transition: none !important;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.mt-1 {
+  margin-top: 10px;
+}
+
+#hud {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ddd;
+  color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+#dimensions {
+  font-family: monospace;
+}
+
+/* Canvas */
+.wrapper {
+  position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  visibility: hidden;
+  width: 300px;
+  height: 100%;
+  background: #757575;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  padding: 2rem;
+}
+
+.sidebar-menu > * {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 300px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/* .sidebar::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+} */
+
+.slideout {
+  visibility: visible;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+
+.slideout.open {
+  visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.sidebar-overlay {
+  z-index: 80;
+}
+
+.sidebar-overlay::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  z-index: 80;
+}
+
+.sidebar-overlay.visible::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+/* .slideout::after {
+  display: none;
+} */

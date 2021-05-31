@@ -4,10 +4,34 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link
+      href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Maze</title>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+  <body class="preload">
+    <div class="container">
+      <div class="sidebar slideout">
+        <nav class="sidebar-menu">
+          <h1>Maze</h1>
+          <div><button class="mt-1" id="reset">Reset</button></div>
+          <div id="grid-size"></div>
+          <div id="strategy"></div>
+        </nav>
+      </div>
+      <div class="sidebar-overlay">
+        <div id="app"></div>
+        <div id="hud">
+          <div id="dimensions"></div>
+          <div><button class="mt-1" id="menu">Menu</button></div>
+          <div><button class="mt-1" id="stop">Stop</button></div>
+          <div><button class="mt-1" id="play">Play</button></div>
+          <div><button class="mt-1" id="step">Step</button></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
